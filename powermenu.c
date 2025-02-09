@@ -29,7 +29,7 @@ void init(App* app) {
 }
 
 void render(App* app) {
-    SDL_SetRenderDrawColor(app->renderer, 0x27, 0x2e, 0x3e, 0xff);
+    SDL_SetRenderDrawColor(app->renderer, 0x27, 0x2e, 0x33, 0xff);
     SDL_RenderClear(app->renderer);
 
     SDL_SetRenderDrawColor(app->renderer, 0xe6, 0x73, 0x80, 0xff);
