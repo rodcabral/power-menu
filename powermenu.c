@@ -12,17 +12,17 @@ void init(App* app) {
     int rect_w = 40; 
     int rect_h = 40;
 
-    app->shutdown_rect.x = 10;
+    app->shutdown_rect.x = SCREEN_WIDTH / 2 - rect_w / 2;
     app->shutdown_rect.y = 10;
     app->shutdown_rect.w = rect_w;
     app->shutdown_rect.h = rect_h;
 
-    app->reboot_rect.x = 10;
+    app->reboot_rect.x = SCREEN_WIDTH / 2 - rect_w / 2;
     app->reboot_rect.y = app->shutdown_rect.y + rect_h + 20;
     app->reboot_rect.w = rect_w;
     app->reboot_rect.h = rect_h;
 
-    app->lock_rect.x = 10;
+    app->lock_rect.x = SCREEN_WIDTH / 2 - rect_w / 2;
     app->lock_rect.y = app->reboot_rect.y + rect_h + 20;
     app->lock_rect.w = rect_w;
     app->lock_rect.h = rect_h;
