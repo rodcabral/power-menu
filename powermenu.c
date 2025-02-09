@@ -104,7 +104,7 @@ void events(App* app) {
                     }
 
                     if((clickX >= app->lock_rect.x && clickX <= app->lock_rect.x + app->lock_rect.w) && (clickY >= app->lock_rect.y && clickY <= app->lock_rect.y + app->lock_rect.h)) {
-                        system("");
+                        system("env XSECURELOCK_PAM_SERVICE=system-local-login xsecurelock");
                     }
 
                     break;
