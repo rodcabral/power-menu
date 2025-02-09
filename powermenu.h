@@ -5,8 +5,8 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdbool.h>
 
-#define SCREEN_WIDTH 200
-#define SCREEN_HEIGHT 300
+#define SCREEN_WIDTH 150
+#define SCREEN_HEIGHT 150
 
 typedef struct {
     SDL_Window* window;
