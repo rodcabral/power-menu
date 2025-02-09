@@ -10,5 +10,7 @@ int main(void) {
         render(&app);
     }
 
+    clear_app(&app);
+
     return 0;
 }

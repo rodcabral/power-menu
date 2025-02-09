@@ -132,3 +132,12 @@ void render(App* app) {
 
     SDL_RenderPresent(app->renderer);
 }
+
+void clear_app(App* app) {
+    SDL_DestroyTexture(app->shutdown_ttf);
+    SDL_DestroyTexture(app->reboot_ttf);
+    SDL_DestroyTexture(app->lock_ttf);
+
+    SDL_DestroyRenderer(app->renderer);
+    SDL_DestroyWindow(app->window);
+}

@@ -29,6 +29,8 @@ void render(App* app);
 
 void events(App* app);
 
+void clear_app(App* app);
+
 SDL_Texture* load_text(App* app, const char* txt);
 
 #endif
