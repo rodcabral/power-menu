@@ -21,4 +21,6 @@ void init(App* app);
 
 void render(App* app);
 
+void events(App* app);
+
 #endif

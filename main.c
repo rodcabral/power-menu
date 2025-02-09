@@ -6,6 +6,7 @@ int main(void) {
     init(&app);
 
     while(app.is_running) {
+        events(&app);
         render(&app);
     }
 

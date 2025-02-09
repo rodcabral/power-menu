@@ -28,6 +28,25 @@ void init(App* app) {
     app->lock_rect.h = rect_h;
 }
 
+void events(App* app) {
+    SDL_Event event;
+
+    SDL_PollEvent(&event);
+
+    switch(event.type) {
+        case SDL_QUIT:
+            app->is_running = false;
+            break;
+        case SDL_KEYDOWN:
+            switch(event.key.keysym.sym) {
+                case SDLK_ESCAPE:
+                    app->is_running = false;
+                    break;
+            }
+            break;
+    }
+}
+
 void render(App* app) {
     SDL_SetRenderDrawColor(app->renderer, 0x27, 0x2e, 0x33, 0xff);
     SDL_RenderClear(app->renderer);
