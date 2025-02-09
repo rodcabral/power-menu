@@ -4,7 +4,7 @@ Simple menu to choose between shutdown, reboot or lock.
 
 - [x] Shutdown
 - [x] Reboot
-- [-] Lock
+- [ ] Lock
 
 ![Example](example.png)
 
