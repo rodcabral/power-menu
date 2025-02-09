@@ -10,6 +10,6 @@ Simple menu to choose between shutdown, reboot or lock.
 
 ### Install
 
-Dependencies: sdl2, sdl2_ttf, make
+Dependencies: sdl2, sdl2_ttf, make, JetBrainsMono Nerd Font
 
 ```git clone https://github.com/rodcabral/power-menu && cd power-menu && make install```
