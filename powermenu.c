@@ -96,15 +96,15 @@ void events(App* app) {
                     SDL_GetMouseState(&clickX, &clickY);
                     
                     if((clickX >= app->shutdown_rect.x && clickX <= app->shutdown_rect.x + app->shutdown_rect.w) && (clickY >= app->shutdown_rect.y && clickY <= app->shutdown_rect.y + app->shutdown_rect.h)) {
-                        printf("shutdown!\n");
+                        system("shutdown -h 0");
                     }
                         
                     if((clickX >= app->reboot_rect.x && clickX <= app->reboot_rect.x + app->reboot_rect.w) && (clickY >= app->reboot_rect.y && clickY <= app->reboot_rect.y + app->reboot_rect.h)) {
-                        printf("reboot!\n");
+                        system("reboot");
                     }
 
                     if((clickX >= app->lock_rect.x && clickX <= app->lock_rect.x + app->lock_rect.w) && (clickY >= app->lock_rect.y && clickY <= app->lock_rect.y + app->lock_rect.h)) {
-                        printf("lock!\n");
+                        system("");
                     }
 
                     break;
