@@ -33,6 +33,8 @@ void events(App* app) {
 
     SDL_PollEvent(&event);
 
+    int clickX, clickY;
+
     switch(event.type) {
         case SDL_QUIT:
             app->is_running = false;
@@ -41,6 +43,26 @@ void events(App* app) {
             switch(event.key.keysym.sym) {
                 case SDLK_ESCAPE:
                     app->is_running = false;
+                    break;
+            }
+            break;
+        case SDL_MOUSEBUTTONDOWN:
+            switch(event.button.button) {
+                case SDL_BUTTON_LEFT:
+                    SDL_GetMouseState(&clickX, &clickY);
+                    
+                    if((clickX >= app->shutdown_rect.x && clickX <= app->shutdown_rect.x + app->shutdown_rect.w) && (clickY >= app->shutdown_rect.y && clickY <= app->shutdown_rect.y + app->shutdown_rect.h)) {
+                        printf("shutdown!\n");
+                    }
+                        
+                    if((clickX >= app->reboot_rect.x && clickX <= app->reboot_rect.x + app->reboot_rect.w) && (clickY >= app->reboot_rect.y && clickY <= app->reboot_rect.y + app->reboot_rect.h)) {
+                        printf("reboot!\n");
+                    }
+
+                    if((clickX >= app->lock_rect.x && clickX <= app->lock_rect.x + app->lock_rect.w) && (clickY >= app->lock_rect.y && clickY <= app->lock_rect.y + app->lock_rect.h)) {
+                        printf("lock!\n");
+                    }
+
                     break;
             }
             break;
