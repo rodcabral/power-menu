@@ -1,4 +1,5 @@
 #include "powermenu.h"
+#include <SDL2/SDL_render.h>
 
 void init(App* app) {
     TTF_Init();
@@ -7,11 +8,38 @@ void init(App* app) {
     app->renderer = SDL_CreateRenderer(app->window, -1, 0);
 
     app->is_running = true;
+
+    int rect_w = 40; 
+    int rect_h = 40;
+
+    app->shutdown_rect.x = 10;
+    app->shutdown_rect.y = 10;
+    app->shutdown_rect.w = rect_w;
+    app->shutdown_rect.h = rect_h;
+
+    app->reboot_rect.x = 10;
+    app->reboot_rect.y = app->shutdown_rect.y + rect_h + 20;
+    app->reboot_rect.w = rect_w;
+    app->reboot_rect.h = rect_h;
+
+    app->lock_rect.x = 10;
+    app->lock_rect.y = app->reboot_rect.y + rect_h + 20;
+    app->lock_rect.w = rect_w;
+    app->lock_rect.h = rect_h;
 }
 
 void render(App* app) {
     SDL_SetRenderDrawColor(app->renderer, 0x27, 0x2e, 0x3e, 0xff);
     SDL_RenderClear(app->renderer);
+
+    SDL_SetRenderDrawColor(app->renderer, 0xe6, 0x73, 0x80, 0xff);
+    SDL_RenderFillRect(app->renderer, &app->shutdown_rect);
+    
+    SDL_SetRenderDrawColor(app->renderer, 0xe6, 0x73, 0x80, 0xff);
+    SDL_RenderFillRect(app->renderer, &app->reboot_rect);
+
+    SDL_SetRenderDrawColor(app->renderer, 0xe6, 0x73, 0x80, 0xff);
+    SDL_RenderFillRect(app->renderer, &app->lock_rect);
 
     SDL_RenderPresent(app->renderer);
 }

@@ -12,6 +12,9 @@ typedef struct {
     SDL_Window* window;
     SDL_Renderer* renderer;
     bool is_running;
+
+    SDL_Rect shutdown_rect, reboot_rect, lock_rect;
+
 } App;
 
 void init(App* app);
