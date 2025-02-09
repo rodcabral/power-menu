@@ -4,5 +4,5 @@ LIBS = -lSDL2 -lSDL2_ttf
 powermenu: main.c powermenu.c powermenu.h
 	gcc $(FLAGS) $(LIBS) main.c powermenu.c -o powermenu
 
-install:
+install: powermenu
 	sudo cp powermenu /bin
